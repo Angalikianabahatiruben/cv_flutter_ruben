@@ -11,13 +11,13 @@ Application mobile développée avec **Flutter** dans le cadre d'un travail prat
 
 ## Captures d'écran
 
-| 1. Page de Connexion | 2. Page d'Accueil (CV) |
-| :---: | :---: |
-| ![Connexion](screenshots/login.png) | ![CV](screenshots/cv.png) |
+| 1. Page de Connexion | 2. Page d'Accueil (CV - Partie 1) | 3. Page d'Accueil (CV - Partie 2) |
+| :---: | :---: | :---: |
+| ![Connexion](screenshots/login.png) | ![CV 1](screenshots/cv%201.png) | ![CV 2](screenshots/cv%202.png) |
 
-| 3. Page Famille | 4. Page Contact |
+| 4. Page Famille | 5. Page Contacts |
 | :---: | :---: |
-| ![Famille](screenshots/famille.png) | ![Contact](screenshots/contact.png) |
+| ![Famille](screenshots/famille.png) | ![Contacts](screenshots/contacts.png) |
 
 ## Installation et exécution
 1. Cloner le dépôt :
