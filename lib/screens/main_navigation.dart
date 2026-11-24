@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+
 import 'cv_page.dart';
 import 'famille_page.dart';
 import 'contact_page.dart';
 import 'login_page.dart';
 
 class MainNavigation extends StatefulWidget {
-  const MainNavigation({super.key});
+  final String? userEmail;
+
+  const MainNavigation({super.key, this.userEmail});
 
   @override
   State<MainNavigation> createState() => _MainNavigationState();
@@ -14,23 +17,29 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _indexActuel = 0;
 
-  final List<Widget> _pages = const [
-    CvPage(),
-    FamillePage(),
-    ContactPage(),
-  ];
+  final List<Widget> _pages = const [CvPage(), FamillePage(), ContactPage()];
 
-  final List<String> _titres = const [
-    'Mon CV',
-    'Ma Famille',
-    'Mes Contacts',
-  ];
+  final List<String> _titres = const ['Mon CV', 'Ma Famille', 'Mes Contacts'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_titres[_indexActuel], style: const TextStyle(fontWeight: FontWeight.bold)),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              _titres[_indexActuel],
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            if (widget.userEmail != null && widget.userEmail!.isNotEmpty)
+              Text(
+                widget.userEmail!,
+                style: const TextStyle(fontSize: 12, color: Colors.white70),
+              ),
+          ],
+        ),
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Colors.white,
         actions: [
